@@ -1,24 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Header from '../components/header.astro';
+import Button from '../components/buttons.astro'
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<header>
-			<h1 class="Logo">Logo</h1>
-			<ul class="nav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Quienes Somos</a></li>
-				<li><a href="#">Servicios</a></li>
-				<li><a href="#">Contacto</a></li>
-			</ul>
-			<div class="social">
-				<i class="fab fa-facebook">F</i>&nbsp;&nbsp;
-				<i class="fab fa-twitter">T</i>&nbsp;&nbsp;
-				<i class="fab fa-instagram">i</i>
-			</div>
-		</header>
+		<Header/>
 		<section class=hero>
 			<p>Bienvenidos al sitio Web del Laboratorio Clínico de Centro de Salud Integral Anluz VII C.A., está plataforma ha sido diseñada y desarrollada pensando en usted, y sus necesidades.
 
@@ -26,6 +14,7 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 		<button class="instrucciones">Instrucciones</button>
 		<button class="Calcular">Calcula tu IMC</button>
+
 		<div class="container">
 			<h1>Calculadora de IMC</h1>
 			<label for="peso">Peso (kg):</label>
@@ -49,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
 	</main>
 </Layout>
 
-<style>
+<style is:global>
 	
 </style>
 
