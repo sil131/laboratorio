@@ -1,40 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
-import Button from '../components/buttons.astro'
+import Hero from '../components/hero.astro'
+import Examen from '../components/examen.astro'
+import Link from '../components/link.astro'
+import Footer from '../components/footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header/>
-		<section class=hero>
-			<p>Bienvenidos al sitio Web del Laboratorio Clínico de Centro de Salud Integral Anluz VII C.A., está plataforma ha sido diseñada y desarrollada pensando en usted, y sus necesidades.
+		<Hero/>
+		<Examen/>
+		<Link link="./calcular" name="Calcula tu IMC"/>
+		<Footer/>
 
-				Durante su recorrido encontrará información de gran utilidad, pensando siempre en prestar diariamente el servicio que usted merece.</p>
-		</section>
-		<button class="instrucciones">Instrucciones</button>
-		<button class="Calcular">Calcula tu IMC</button>
-
-		<div class="container">
-			<h1>Calculadora de IMC</h1>
-			<label for="peso">Peso (kg):</label>
-			<input type="number" id="peso" step="0.01" required>
-			<label for="altura">Altura (m):</label>
-			<input type="number" id="altura" step="0.01" required>
-			<button id="calcular">Calcular</button>
-			<div id="resultado"></div>
-		  </div>
-			<div class="direccion">
-						DIRECCIÓN
-
-
-			Calle Miranda, entre Páez y José Felix Rivas Edf. Antoluz PB Chacao , Caracas-Venezuela.
-			Telf:. (058) 0212.264.41.50/ 264.28.85
-			Fax: (058) 0212.261.25.64
-			Email: centro_salud-integral_anluz@hotmail.com
-			horarios:
-			Lunes a Viernes de 7:00 am - 5:30 pm
-			</div>	
+			
 	</main>
 </Layout>
 
@@ -42,24 +23,3 @@ import Button from '../components/buttons.astro'
 	
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const calcularButton = document.getElementById("calcular");
-  const pesoInput = document.getElementById("peso");
-  const alturaInput = document.getElementById("altura");
-  const resultadoDiv = document.getElementById("resultado");
-
-  calcularButton.addEventListener("click", function () {
-    const peso = parseFloat(pesoInput.value);
-    const altura = parseFloat(alturaInput.value);
-
-    if (!isNaN(peso) && !isNaN(altura)) {
-      const imc = peso / (altura * altura);
-      resultadoDiv.textContent = `Tu IMC es: ${imc.toFixed(2)}`;
-    } else {
-      resultadoDiv.textContent = "Por favor, ingresa valores válidos.";
-    }
-  });
-});
-
-</script>
