@@ -1,21 +1,58 @@
 ---
 import Link from "./link.astro";
 ---
-<section>
-    <div>
-        <img src="" alt="">
-        <h2></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil maxime excepturi rerum sit!</p>
+
+<section class="card-container">
+  <h2 class="card-title">Examenes</h2>
+  <div class="card-wrapper">
+    <div class="icard">
+      <!-- Contenido de la tarjeta 1 -->
     </div>
-    <div>
-        <img src="" alt="">
-        <h2></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil maxime excepturi rerum sit!</p>
+    <div class="icard">
+      <!-- Contenido de la tarjeta 2 -->
     </div>
-    <div>
-        <img src="" alt="">
-        <h2></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni nihil maxime excepturi rerum sit!</p>
+    <div class="icard">
+      <!-- Contenido de la tarjeta 3 -->
     </div>
-    <Link link="examenes" name="Ver Mas"/>
+  </div>
+  <div class="card-link">
+    <Link link="examenes" name="Ver Más"/>
+  </div>
 </section>
+
+<style>
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(221, 160, 221, 0.6);
+  }
+
+  .card-title {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .icard {
+    width: calc(33.33% - 20px);
+    margin: 0 20px;
+    background-color: #ffffff;
+    padding: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-link {
+    margin-top: 20px;
+  }
+</style>
