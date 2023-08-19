@@ -1,0 +1,107 @@
+---
+
+---
+<section class="calcular">
+    <div class = calcular1>
+        <h1>Calculadora IMC </h1>
+        <form>
+        <p>Digite su peso</p>
+        </form>
+        <input id='peso' type='number'/>
+        <span>Kg</span>
+        <div>
+        <p>Digite su altura</p>
+        <input id='altura' type='number'/>
+         <span>Cm</span>
+        </div>
+        <div>
+        <input id='btn_calcular' class='button' type="button" value="Calcular">
+        </div>
+        <div id="resultado"></div>
+        </div>
+</section>
+  
+  <style>
+.calcular{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(109.5deg, rgb(13, 11, 136) 9.4%, rgb(86, 255, 248) 78.4%);
+}
+
+.calcular1{
+  border: 5px #ddd;
+  box-shadow: 0px 0px 10px;
+  background-color: #ADD8E6;
+  padding: 2em 2em;
+  width: 350px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.button{
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px;
+  background-color: #1b2845;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transform : translateY(25%);
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #2b2b2e;
+}
+
+#peso {
+  border: none;
+  width: 90%;
+  font-size: 18px;
+}
+
+#altura {
+  border: none;
+  width: 90%;
+  font-size: 18px;
+}
+
+#resultado {
+  transform : translateY(50%);
+}
+</style>
+  
+  <script>
+  let botaoCalcular = document.getElementById(btn_calcular);
+    function calculandoIMC(){
+    let peso = document.getElementById("peso").value;
+    let altura = document.getElementById("altura").value/100;
+    let resultado = document.getElementById("resultado")
+    if(altura !== "" && peso !==""){
+        let imc = (peso / (altura*altura)).toFixed(2);
+        let mensagem = "";
+        if(imc < 18.5){
+            mensagem = "bajo peso!"
+        }else if(imc < 25){
+            mensagem = "¡Estás en el peso ideal!"
+        }else if(imc < 30){
+            mensagem = "¡Tienes un poco de sobrepeso!"
+        }else if(imc < 35){
+            mensagem = "¡Cuidado! Obesidad grado I"
+        }else if(imc < 40){
+            mensagem = "¡Cuidado! Obesidad grado II"
+        }else {
+            mensagem = "¡Cuidado! Obesidad grado III"
+        }
+        resultado.textContent = `Su IMC es ${imc}! ${mensagem}`;      
+    }else{
+        resultado.textContent = "Rellena todos los campos!!!"
+    }
+}
+btn_calcular.addEventListener('click', calculandoIMC);
+
+  </script>
+  
